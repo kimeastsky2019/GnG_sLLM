@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import {
@@ -20,8 +21,10 @@ import {
   RiskLevel,
   getRiskLevelInfo,
   formatDate,
-  cn
+  cn,
+  ROUTE_PATHS
 } from "@/lib/index";
+import { LifecycleStateBadge } from "@/components/LifecycleStateBadge";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
@@ -94,25 +97,25 @@ interface ServiceCardProps {
 export function ServiceCard({ service, onClick }: ServiceCardProps) {
   const { t } = useTranslation();
   const risk = getRiskLevelInfo(service.riskLevel);
+  const detailPath = ROUTE_PATHS.SERVICE_DETAIL.replace(":id", service.id);
 
-  return (
-    <motion.div
-      whileHover={{ scale: 1.01 }}
-      whileTap={{ scale: 0.98 }}
-      onClick={onClick}
-      className="cursor-pointer"
-    >
-      <Card className="group transition-all border-border/40 hover:border-primary/50 bg-card/50 backdrop-blur-sm">
+  const cardContent = (
+    <Card className="group transition-all border-border/40 hover:border-primary/50 bg-card/50 backdrop-blur-sm">
         <CardHeader className="pb-3">
           <div className="flex justify-between items-start mb-2">
             <Badge variant="secondary" className="text-[10px] uppercase tracking-tighter opacity-70">
               {t('data.cat_' + service.category)}
             </Badge>
-            <div
-              className="px-2 py-0.5 rounded text-[10px] font-bold"
-              style={{ backgroundColor: risk.bg, color: risk.color }}
-            >
-              {t(risk.label)}
+            <div className="flex items-center gap-1.5 flex-wrap justify-end">
+              {service.lifecycleState && (
+                <LifecycleStateBadge state={service.lifecycleState} />
+              )}
+              <div
+                className="px-2 py-0.5 rounded text-[10px] font-bold"
+                style={{ backgroundColor: risk.bg, color: risk.color }}
+              >
+                {t(risk.label)}
+              </div>
             </div>
           </div>
           <CardTitle className="text-lg group-hover:text-primary transition-colors">
@@ -142,6 +145,19 @@ export function ServiceCard({ service, onClick }: ServiceCardProps) {
           </div>
         </CardFooter>
       </Card>
+  );
+
+  return (
+    <motion.div
+      whileHover={{ scale: 1.01 }}
+      whileTap={{ scale: 0.98 }}
+      className="cursor-pointer"
+    >
+      {onClick ? (
+        <div onClick={onClick}>{cardContent}</div>
+      ) : (
+        <Link to={detailPath} className="block">{cardContent}</Link>
+      )}
     </motion.div>
   );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   ArrowLeft,
@@ -12,15 +12,18 @@ import {
   ShieldAlert,
   Zap,
   CheckCircle2,
-  XCircle
+  XCircle,
+  Sparkles
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { toast } from 'sonner';
 import { Layout } from '@/components/Layout';
 import {
   RiskStatusCard,
   MetricCard,
   ComplianceCard
 } from '@/components/Cards';
+import { LifecycleStateBadge, LifecycleNextActions } from '@/components/LifecycleStateBadge';
 import {
   RiskTrendChart,
   BiasHeatmap,
@@ -39,13 +42,29 @@ import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Separator } from '@/components/ui/separator';
 import { Progress } from '@/components/ui/progress';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+} from '@/components/ui/sheet';
+import { Label } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Textarea } from '@/components/ui/textarea';
 import { IMAGES } from '@/assets/images';
 import { useTranslation } from 'react-i18next';
+
+type UpgradePlan = 'basic' | 'pro' | 'enterprise';
 
 export default function ServiceDetail() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const [upgradeOpen, setUpgradeOpen] = useState(false);
+  const [upgradePlan, setUpgradePlan] = useState<UpgradePlan>('pro');
+  const [upgradeReason, setUpgradeReason] = useState('');
 
   // Find related data based on ID
   const service = mockAIServices.find(s => s.id === id) || mockAIServices[0];
@@ -87,16 +106,30 @@ export default function ServiceDetail() {
               <ArrowLeft className="w-5 h-5" />
             </Button>
             <div>
-              <div className="flex items-center gap-3 mb-1">
+              <div className="flex items-center gap-3 mb-1 flex-wrap">
                 <h1 className="text-3xl font-bold tracking-tight">{service.name}</h1>
                 <Badge className={getStatusColor(service.status)}>
                   {t(`service_detail.status.${service.status.toLowerCase()}`)}
                 </Badge>
+                {service.lifecycleState && (
+                  <LifecycleStateBadge state={service.lifecycleState} className="text-xs" />
+                )}
               </div>
               <p className="text-muted-foreground">ID: {service.id} • {t('service_detail.header.manager')}: {t(service.owner)}</p>
+              {service.lifecycleState && (
+                <div className="mt-2">
+                  <LifecycleNextActions
+                    currentState={service.lifecycleState}
+                    onTransition={(next) => toast.info(t('lifecycle.state_changed') + ' → ' + t('lifecycle.' + next))}
+                  />
+                </div>
+              )}
             </div>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
+            <Button variant="default" className="gap-2" onClick={() => setUpgradeOpen(true)}>
+              <Sparkles className="w-4 h-4" /> {t('service_detail.header.btn_upgrade')}
+            </Button>
             <Button variant="outline" className="gap-2">
               <FileText className="w-4 h-4" /> {t('service_detail.header.btn_report')}
             </Button>
@@ -107,6 +140,64 @@ export default function ServiceDetail() {
             )}
           </div>
         </div>
+
+        {/* 서비스 업그레이드 요청 시트 */}
+        <Sheet open={upgradeOpen} onOpenChange={setUpgradeOpen}>
+          <SheetContent side="right" className="sm:max-w-md">
+            <SheetHeader>
+              <SheetTitle>{t('service_detail.upgrade.title')}</SheetTitle>
+              <SheetDescription>{t('service_detail.upgrade.description')}</SheetDescription>
+            </SheetHeader>
+            <div className="grid gap-6 py-6">
+              <div className="space-y-3">
+                <Label>{t('service_detail.upgrade.plan_label')}</Label>
+                <RadioGroup value={upgradePlan} onValueChange={(v) => setUpgradePlan(v as UpgradePlan)} className="grid gap-3">
+                  <div className="flex items-center space-x-2 rounded-lg border p-4 hover:bg-accent/50">
+                    <RadioGroupItem value="basic" id="plan-basic" />
+                    <Label htmlFor="plan-basic" className="flex-1 cursor-pointer text-sm font-normal">
+                      {t('service_detail.upgrade.plan_basic')}
+                    </Label>
+                  </div>
+                  <div className="flex items-center space-x-2 rounded-lg border p-4 hover:bg-accent/50">
+                    <RadioGroupItem value="pro" id="plan-pro" />
+                    <Label htmlFor="plan-pro" className="flex-1 cursor-pointer text-sm font-normal">
+                      {t('service_detail.upgrade.plan_pro')}
+                    </Label>
+                  </div>
+                  <div className="flex items-center space-x-2 rounded-lg border p-4 hover:bg-accent/50">
+                    <RadioGroupItem value="enterprise" id="plan-enterprise" />
+                    <Label htmlFor="plan-enterprise" className="flex-1 cursor-pointer text-sm font-normal">
+                      {t('service_detail.upgrade.plan_enterprise')}
+                    </Label>
+                  </div>
+                </RadioGroup>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="upgrade-reason">{t('service_detail.upgrade.reason_placeholder')}</Label>
+                <Textarea
+                  id="upgrade-reason"
+                  placeholder={t('service_detail.upgrade.reason_placeholder')}
+                  value={upgradeReason}
+                  onChange={(e) => setUpgradeReason(e.target.value)}
+                  rows={3}
+                  className="resize-none"
+                />
+              </div>
+            </div>
+            <SheetFooter>
+              <Button
+                onClick={() => {
+                  toast.success(t('service_detail.upgrade.success'));
+                  setUpgradeOpen(false);
+                  setUpgradeReason('');
+                  setUpgradePlan('pro');
+                }}
+              >
+                {t('service_detail.upgrade.submit')}
+              </Button>
+            </SheetFooter>
+          </SheetContent>
+        </Sheet>
 
         {/* Top Metric Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

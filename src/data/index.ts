@@ -8,6 +8,7 @@ export const mockAIServices: AIService[] = [
     description: "data.svc_001_desc",
     riskLevel: "HIGH",
     status: "OPERATING",
+    lifecycleState: "Operating",
     complianceRate: 92,
     lastUpdated: "2026-01-25T14:30:00Z",
     owner: "data.svc_001_owner"
@@ -19,6 +20,7 @@ export const mockAIServices: AIService[] = [
     description: "data.svc_002_desc",
     riskLevel: "MEDIUM",
     status: "DEVELOPING",
+    lifecycleState: "InDevelopment",
     complianceRate: 78,
     lastUpdated: "2026-01-29T10:15:00Z",
     owner: "data.svc_002_owner"
@@ -30,6 +32,7 @@ export const mockAIServices: AIService[] = [
     description: "data.svc_003_desc",
     riskLevel: "LOW",
     status: "OPERATING",
+    lifecycleState: "Monitoring",
     complianceRate: 98,
     lastUpdated: "2026-01-30T09:00:00Z",
     owner: "data.svc_003_owner"
@@ -41,6 +44,7 @@ export const mockAIServices: AIService[] = [
     description: "data.svc_004_desc",
     riskLevel: "CRITICAL",
     status: "PLANNING",
+    lifecycleState: "Draft",
     complianceRate: 45,
     lastUpdated: "2026-01-28T16:45:00Z",
     owner: "data.svc_004_owner"
@@ -52,6 +56,7 @@ export const mockAIServices: AIService[] = [
     description: "data.svc_005_desc",
     riskLevel: "LOW",
     status: "EMERGENCY_STOP",
+    lifecycleState: "ImprovementPlanned",
     complianceRate: 85,
     lastUpdated: "2026-01-30T22:10:00Z",
     owner: "data.svc_005_owner"

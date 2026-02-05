@@ -8,7 +8,54 @@ export const ROUTE_PATHS = {
   COMPLIANCE: "/compliance",
   SLLM_AUTOMATION: "/sllm-automation",
   SERVICE_DETAIL: "/service/:id",
+  ENERGY_INTRO: "/energy-intro",
+  // AI 거버넌스 플로우 (flowchart 기준)
+  FLOW: "/flow",
+  FLOW_STEP: "/flow/:stepId",
+  FLOW_REQUEST_FORM: "/flow/request-form",
+  FLOW_PROJECT_CREATE: "/flow/project-create",
+  FLOW_PLANNING_DOC: "/flow/planning-doc",
+  FLOW_MODEL_DOC: "/flow/model-doc",
+  FLOW_PRE_REVIEW_REQUEST: "/flow/pre-review-request",
+  FLOW_RISK_ASSESSMENT: "/flow/risk-assessment",
+  FLOW_PRE_REVIEW_RESULT: "/flow/pre-review-result",
+  FLOW_DEV_PLAN: "/flow/dev-plan",
+  FLOW_RISK_PLAN: "/flow/risk-plan",
+  FLOW_RISK_LEVEL_JUDGE: "/flow/risk-level-judge",
+  FLOW_RISK_PLAN_APPROVAL: "/flow/risk-plan-approval",
+  FLOW_GOVERNANCE_APPROVAL: "/flow/governance-approval",
+  FLOW_DEV_REQUEST: "/flow/dev-request",
+  FLOW_DEV_PROGRESS: "/flow/dev-progress",
+  FLOW_PRE_OP_VERIFICATION: "/flow/pre-op-verification",
+  FLOW_VERIFICATION_BRANCH: "/flow/verification-branch",
+  FLOW_VERIFICATION_ADEQUACY: "/flow/verification-adequacy",
+  FLOW_THIRD_PARTY_VERIFICATION: "/flow/third-party-verification",
+  FLOW_OP_APPROVAL_REQUEST: "/flow/op-approval-request",
+  FLOW_DEPLOYMENT_APPROVAL: "/flow/deployment-approval",
+  FLOW_DEPLOYMENT: "/flow/deployment",
+  FLOW_IMPROVEMENT: "/flow/improvement",
 } as const;
+
+export {
+  FLOW_STEPS,
+  FLOW_STEP_IDS,
+  getFlowStepByPath,
+  getFlowStepById,
+  getPrevPath,
+} from "./flow";
+export type { FlowStepId, FlowStepDef, FlowStepBranch } from "./flow";
+
+export {
+  LIFECYCLE_STATE_IDS,
+  LIFECYCLE_STATE_LABEL_KEYS,
+  LIFECYCLE_TRANSITIONS,
+  LIFECYCLE_TRANSITION_LABEL_KEYS,
+  getNextStates,
+  getPrevStates,
+  canTransition,
+  serviceStatusToLifecycle,
+} from "./lifecycle";
+export type { LifecycleStateId } from "./lifecycle";
 
 export type RiskLevel = "LOW" | "MEDIUM" | "HIGH" | "CRITICAL";
 export type ServiceStatus = "PLANNING" | "DEVELOPING" | "OPERATING" | "EMERGENCY_STOP";
@@ -56,6 +103,8 @@ export interface AIService {
   description: string;
   riskLevel: RiskLevel;
   status: ServiceStatus;
+  /** 라이프사이클 상태 전이 다이어그램 기준 (있으면 우선 표시) */
+  lifecycleState?: import("./lifecycle").LifecycleStateId;
   complianceRate: number;
   lastUpdated: string;
   owner: string;

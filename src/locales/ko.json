@@ -80,11 +80,196 @@
         "count": "개",
         "pts": "pts"
     },
+    "nav": {
+        "home": "홈",
+        "home_desc": "시스템 개요 및 아키텍처",
+        "dashboard_desc": "전사 AI 위험 커맨드 센터",
+        "improvement_desc": "개선 계획·이행 관리",
+        "assessment": "위험성 평가",
+        "assessment_desc": "고영향 AI 판별 및 법률 검토",
+        "technical": "기술 검증",
+        "technical_desc": "데이터 편향 및 XAI 분석",
+        "monitoring": "실시간 모니터링",
+        "monitoring_desc": "모델 드리프트 및 이상 탐지",
+        "compliance": "규제 준수 현황",
+        "compliance_desc": "글로벌 AI 규제 대응 현황",
+        "sllm": "sLLM 자동화",
+        "sllm_desc": "소형 언어모델 기반 AI 평가 자동화"
+    },
+    "flow": {
+        "progress_label": "플로우 진행률",
+        "btn_prev": "이전",
+        "btn_next": "다음",
+        "step_placeholder": "이 단계에서 작성·처리할 내용이 표시됩니다. (추후 단계별 폼/뷰 확장)",
+        "requirements_title": "상세 구축요건",
+        "requirement_label": "상세 구축요건",
+        "description_label": "설명",
+        "nav_start": "플로우 시작",
+        "nav_start_desc": "요청서 작성/처리",
+        "nav_dashboard": "운영 대시보드",
+        "nav_improvement": "개선 계획/관리",
+        "risk_level": {
+            "low_medium": "저·중위험",
+            "medium": "중위험",
+            "high": "고위험"
+        },
+        "request_form": {
+            "title": "요청서 작성/처리 화면",
+            "description": "AI 서비스 도입·변경 요청서를 작성하고 접수·처리합니다."
+        },
+        "project_create": {
+            "title": "AI 서비스 프로젝트 생성",
+            "description": "새 AI 서비스 프로젝트를 생성하고 기본 정보를 입력합니다."
+        },
+        "planning_doc": {
+            "title": "AI 서비스 기획서 작성 화면",
+            "description": "AI 서비스 기획서를 작성·제출합니다."
+        },
+        "model_doc": {
+            "title": "AI 모델 설명서 작성 화면",
+            "description": "AI 모델 설명서(용도, 데이터, 성능 등)를 작성합니다."
+        },
+        "pre_review_request": {
+            "title": "사전검토 요청 화면",
+            "description": "사전검토를 요청하고 검토 범위를 설정합니다."
+        },
+        "risk_assessment": {
+            "title": "위험/영향/안전성 평가 화면",
+            "description": "위험·영향·안전성을 평가하고 등급을 산정합니다."
+        },
+        "pre_review_result": {
+            "title": "사전검토 결과 확인 화면",
+            "description": "사전검토 결과를 확인하고 후속 조치를 결정합니다."
+        },
+        "dev_plan": {
+            "title": "AI 모델 개발계획 수립 화면",
+            "description": "AI 모델 개발계획을 수립·등록합니다."
+        },
+        "risk_plan": {
+            "title": "위험관리 계획 수립 화면",
+            "description": "위험관리 계획을 수립합니다."
+        },
+        "risk_level_judge": {
+            "title": "위험등급 판단",
+            "description": "판정된 위험등급에 따라 다음 단계를 선택합니다."
+        },
+        "risk_plan_approval": {
+            "title": "위험관리 계획 승인 화면",
+            "description": "위험관리 계획에 대한 승인을 진행합니다. (저·중위험)"
+        },
+        "governance_approval": {
+            "title": "거버넌스 협의체 사전 승인 화면",
+            "description": "거버넌스 협의체의 사전 승인을 요청·확인합니다. (고위험)"
+        },
+        "dev_request": {
+            "title": "AI 서비스 개발 의뢰 (ITSM 연계)",
+            "description": "개발을 ITSM에 의뢰하고 연계 정보를 입력합니다."
+        },
+        "dev_progress": {
+            "title": "개발 진행 관리 화면",
+            "description": "개발 진행 상황을 관리·모니터링합니다."
+        },
+        "pre_op_verification": {
+            "title": "운영 전 검증 화면",
+            "description": "운영 전 검증을 수행하고 결과를 등록합니다."
+        },
+        "verification_branch": {
+            "title": "위험등급에 따른 검증 경로 선택",
+            "description": "위험등급에 따라 검증 결과 적절성 확인 또는 제3자 검증 경로를 선택합니다."
+        },
+        "verification_adequacy": {
+            "title": "검증 결과 적절성 확인 화면",
+            "description": "검증 결과의 적절성을 확인합니다. (중위험)"
+        },
+        "third_party_verification": {
+            "title": "제3자 검증 요청/결과 등록 화면",
+            "description": "제3자 검증을 요청하고 결과를 등록합니다. (고위험)"
+        },
+        "op_approval_request": {
+            "title": "운영 승인 요청 화면",
+            "description": "운영 승인을 요청합니다."
+        },
+        "deployment_approval": {
+            "title": "위험관리 이행 확인 및 배포 승인",
+            "description": "위험관리 이행을 확인하고 배포를 승인합니다."
+        },
+        "deployment": {
+            "title": "AI 서비스 배포 화면",
+            "description": "AI 서비스를 배포하고 배포 이력을 관리합니다."
+        },
+        "dashboard": {
+            "title": "운영/모니터링 대시보드",
+            "description": "운영 중인 AI 서비스를 모니터링합니다."
+        },
+        "improvement": {
+            "title": "개선 계획/개선 관리 화면",
+            "description": "개선 계획을 수립하고 이행을 관리합니다."
+        },
+        "revision_return": "보완 후 기획서/모델설명서로 수정",
+        "pre_review_approved_btn": "사전검토 승인 → 위험/영향/안전성 평가",
+        "input": {
+            "comment_label": "사용자 코멘트 / 내용",
+            "comment_placeholder": "AI와 협업할 내용을 입력하세요...",
+            "regulation_label": "관련 규정 / 기준",
+            "regulation_placeholder": "적용되는 규정이나 표준을 입력하세요..."
+        }
+    },
+    "lifecycle": {
+        "Draft": "초안",
+        "PlanningCompleted": "기획·모델설명서 완료",
+        "PreReview": "사전검토 중",
+        "RevisionRequired": "보완요청",
+        "PreReviewApproved": "사전검토 승인",
+        "RiskAssessment": "위험/영향/안전성 평가",
+        "RiskPlan": "위험관리 계획 수립",
+        "HighRiskReview": "고위험 협의체 검토",
+        "NormalApproval": "저·중위험 내부 승인",
+        "RiskPlanApproved": "위험관리 계획 승인",
+        "DevelopmentRequested": "개발 의뢰(ITSM)",
+        "InDevelopment": "개발 진행 중",
+        "PreOperationTest": "운영 전 검증",
+        "ThirdPartyTest": "제3자 검증",
+        "ValidationChecked": "검증 적절성 확인",
+        "OperationApprovalRequested": "운영 승인 요청",
+        "DeploymentApproved": "배포 승인",
+        "Deployed": "배포 완료",
+        "Operating": "운영 중",
+        "Monitoring": "모니터링",
+        "ImprovementPlanned": "개선 계획 수립",
+        "transition": {
+            "planning_completed": "기획서/모델설명서 작성완료",
+            "pre_review_request": "사전검토 요청",
+            "revision_required": "보완요청",
+            "revision_done": "수정 완료",
+            "pre_review_approved": "사전검토 승인",
+            "risk_assessment": "위험/영향/안전성 평가",
+            "risk_plan": "위험관리 계획 수립",
+            "high_risk": "고위험",
+            "low_medium_risk": "저·중위험",
+            "governance_approved": "협의체 사전 승인",
+            "internal_approved": "내부 승인",
+            "dev_requested": "개발 의뢰(ITSM)",
+            "in_development": "개발 진행",
+            "pre_op_test": "운영 전 검증",
+            "third_party": "고위험 제3자 검증",
+            "validation_checked": "중위험 검증 확인",
+            "third_party_done": "제3자 검증 완료",
+            "op_approval_requested": "운영 승인 요청",
+            "deployment_approved": "운영 승인",
+            "deployed": "서비스 배포",
+            "operating": "운영 중",
+            "monitoring": "모니터링",
+            "improvement_planned": "개선 필요",
+            "improvement_done": "개선 반영"
+        },
+        "next_actions": "가능한 다음 단계",
+        "state_changed": "상태 전이 요청됨"
+    },
     "footer": {
         "terms": "이용약관",
         "privacy": "개인정보처리방침",
         "support": "고객지원",
-        "copyright": "© 2026 AI Sentinel Corp. All rights reserved."
+        "copyright": "© 2026 GnG International. All rights reserved."
     },
     "cards": {
         "services": "서비스",
@@ -626,7 +811,19 @@
         "header": {
             "manager": "관리 책임자",
             "btn_report": "리포트 다운로드",
-            "btn_stop": "긴급 정지"
+            "btn_stop": "긴급 정지",
+            "btn_upgrade": "서비스 업그레이드"
+        },
+        "upgrade": {
+            "title": "서비스 업그레이드 요청",
+            "plan_label": "플랜 선택",
+            "description": "플랜을 선택하고 업그레이드 사유를 입력해 주세요.",
+            "plan_basic": "Basic — 기본 모니터링 및 리포트",
+            "plan_pro": "Pro — 실시간 드리프트 탐지 및 sLLM 자동 검증",
+            "plan_enterprise": "Enterprise — 전담 지원 및 커스텀 규제 매핑",
+            "reason_placeholder": "업그레이드 사유 (선택)",
+            "submit": "업그레이드 요청 제출",
+            "success": "업그레이드 요청이 접수되었습니다. 담당자가 연락드리겠습니다."
         },
         "status": {
             "operating": "운영 중",
@@ -703,5 +900,57 @@
             "btn_block": "실시간 차단 모드 활성화",
             "btn_manual": "수동 개입 승인 요청"
         }
+    },
+    "energy_intro": {
+        "hero_badge": "차세대 에너지 AI 솔루션",
+        "hero_title_1": "AI와 인간의 협업,",
+        "hero_title_2": "안전한 에너지 미래를 위하여",
+        "hero_desc": "AI 기반 컨설팅의 강력한 힘을 경험하세요. 복잡한 규제를 탐색하고, 규제 준수 문서를 생성하며, 에너지 AI 서비스를 안전하게 최적화하도록 도와드립니다.",
+        "btn_start": "컨설팅 시작하기",
+        "btn_demo": "데모 보기",
+        "solutions_title": "통합 솔루션",
+        "solutions_desc": "에너지 분야에 특화된 AI 거버넌스 도구들과 유기적으로 연결됩니다.",
+        "features": {
+            "flow_title": "지능형 프로세스 플로우",
+            "flow_desc": "기획부터 운영까지 모든 거버넌스 단계에서 AI가 지원합니다.",
+            "dashboard_title": "위험 관리 대시보드",
+            "dashboard_desc": "전사적인 AI 위험 및 규제 준수 현황을 실시간으로 모니터링합니다.",
+            "compliance_title": "규제 준수 및 가이드",
+            "compliance_desc": "최신 에너지 규제 및 AI 안전 가이드라인을 준수하세요.",
+            "sllm_title": "sLLM 자동화",
+            "sllm_desc": "특화된 sLLM을 활용하여 보고서 생성 및 규제 검토를 자동화합니다."
+        },
+        "philosophy_title": "전문성과 혁신의 만남",
+        "philosophy_desc": "우리 플랫폼은 단순한 도구가 아닌 당신의 AI 파트너입니다. 인간 전문가의 지능과 특화된 sLLM을 결합하여, 엄격한 에너지 규제를 준수하면서도 효율성을 극대화합니다.",
+        "philosophy_items": [
+            "자동 규제 검토",
+            "전문 컨설팅 리포트",
+            "실시간 위험 완화",
+            "에너지 특화 데이터 모델"
+        ],
+        "human_experts": "인간 전문가",
+        "human_experts_desc": "도메인 지식 및 감독",
+        "sllm_agent": "sLLM AI 에이전트",
+        "sllm_agent_desc": "분석 및 콘텐츠 생성"
+    },
+    "flow_consult": {
+        "btn_consult": "AI 컨설팅",
+        "btn_consulting": "분석 중...",
+        "report_title": "AI 컨설턴트 리포트",
+        "report_desc": "입력하신 내용과 규정을 바탕으로 분석된 맞춤형 가이드입니다.",
+        "sec_planning": "기획 전략 및 코멘트 분석",
+        "sec_dev": "규제 준수 및 개발 요건",
+        "sec_op": "운영 리스크 관리",
+        "sec_intro": "AI 요약",
+        "placeholder_title": "AI 파트너",
+        "placeholder_desc": "각 항목에 코멘트를 입력하고 '규정 검색'이나 'AI 자동작성' 기능을 활용해보세요. 작성이 완료되면 'AI 컨설팅'을 통해 종합 분석을 받을 수 있습니다.",
+        "mock_planning": "입력하신 '{comment}' 내용을 분석한 결과, 해당 기능은 고위험 AI 영역에 속할 가능성이 높습니다. 기획 단계에서부터 데이터 편향성 방지 대책 수립이 필요합니다.",
+        "mock_dev": "검색된 '{regulation}' 표준을 준수하기 위해, 모델 개발 시 설명 가능성(XAI) 모듈을 필수로 탑재해야 합니다.",
+        "mock_op": "운영 시 실시간 모니터링 주기를 단축하고, 이상 징후 발생 시 즉각적인 롤백 절차를 마련하십시오.",
+        "mock_intro": "협업해주신 내용을 바탕으로 AI 거버넌스 프레임워크를 최적화했습니다.",
+        "btn_auto_write": "AI 자동 작성",
+        "btn_search_reg": "관련 규정 검색",
+        "generating": "작성 중...",
+        "searching": "검색 중..."
     }
 }

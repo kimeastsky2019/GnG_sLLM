@@ -80,11 +80,196 @@
         "count": "ea",
         "pts": "pts"
     },
+    "nav": {
+        "home": "Home",
+        "home_desc": "System overview and architecture",
+        "dashboard_desc": "Enterprise AI risk command center",
+        "improvement_desc": "Improvement plan and execution",
+        "assessment": "Risk assessment",
+        "assessment_desc": "High-impact AI detection and legal review",
+        "technical": "Technical validation",
+        "technical_desc": "Data bias and XAI analysis",
+        "monitoring": "Real-time monitoring",
+        "monitoring_desc": "Model drift and anomaly detection",
+        "compliance": "Compliance",
+        "compliance_desc": "Global AI regulatory compliance",
+        "sllm": "sLLM automation",
+        "sllm_desc": "sLLM-based AI evaluation automation"
+    },
+    "flow": {
+        "progress_label": "Flow progress",
+        "btn_prev": "Previous",
+        "btn_next": "Next",
+        "step_placeholder": "Content for this step will be shown here. (Step-specific forms/views can be added later.)",
+        "requirements_title": "Detailed requirements",
+        "requirement_label": "Requirement",
+        "description_label": "Description",
+        "nav_start": "Start Flow",
+        "nav_start_desc": "Request form",
+        "nav_dashboard": "Ops Dashboard",
+        "nav_improvement": "Improvement plan",
+        "risk_level": {
+            "low_medium": "Low / Medium risk",
+            "medium": "Medium risk",
+            "high": "High risk"
+        },
+        "request_form": {
+            "title": "Request form",
+            "description": "Create and process AI service introduction or change requests."
+        },
+        "project_create": {
+            "title": "AI service project creation",
+            "description": "Create a new AI service project and enter basic information."
+        },
+        "planning_doc": {
+            "title": "AI service planning document",
+            "description": "Write and submit the AI service planning document."
+        },
+        "model_doc": {
+            "title": "AI model description document",
+            "description": "Write the AI model description (purpose, data, performance, etc.)."
+        },
+        "pre_review_request": {
+            "title": "Pre-review request",
+            "description": "Request pre-review and set the scope of review."
+        },
+        "risk_assessment": {
+            "title": "Risk / impact / safety assessment",
+            "description": "Assess risk, impact, and safety and determine the grade."
+        },
+        "pre_review_result": {
+            "title": "Pre-review result",
+            "description": "Review pre-review results and decide on follow-up actions."
+        },
+        "dev_plan": {
+            "title": "AI model development plan",
+            "description": "Establish and register the AI model development plan."
+        },
+        "risk_plan": {
+            "title": "Risk management plan",
+            "description": "Establish the risk management plan."
+        },
+        "risk_level_judge": {
+            "title": "Risk level decision",
+            "description": "Choose the next step according to the determined risk level."
+        },
+        "risk_plan_approval": {
+            "title": "Risk management plan approval",
+            "description": "Approve the risk management plan. (Low/medium risk)"
+        },
+        "governance_approval": {
+            "title": "Governance committee pre-approval",
+            "description": "Request and confirm pre-approval from the governance committee. (High risk)"
+        },
+        "dev_request": {
+            "title": "AI service development request (ITSM)",
+            "description": "Request development via ITSM and enter linkage information."
+        },
+        "dev_progress": {
+            "title": "Development progress management",
+            "description": "Manage and monitor development progress."
+        },
+        "pre_op_verification": {
+            "title": "Pre-operation verification",
+            "description": "Perform pre-operation verification and register results."
+        },
+        "verification_branch": {
+            "title": "Verification path by risk level",
+            "description": "Choose verification adequacy confirmation or third-party verification by risk level."
+        },
+        "verification_adequacy": {
+            "title": "Verification result adequacy",
+            "description": "Confirm adequacy of verification results. (Medium risk)"
+        },
+        "third_party_verification": {
+            "title": "Third-party verification request/result",
+            "description": "Request third-party verification and register results. (High risk)"
+        },
+        "op_approval_request": {
+            "title": "Operation approval request",
+            "description": "Request operation approval."
+        },
+        "deployment_approval": {
+            "title": "Risk management compliance & deployment approval",
+            "description": "Confirm risk management compliance and approve deployment."
+        },
+        "deployment": {
+            "title": "AI service deployment",
+            "description": "Deploy the AI service and manage deployment history."
+        },
+        "dashboard": {
+            "title": "Operations / monitoring dashboard",
+            "description": "Monitor operating AI services."
+        },
+        "improvement": {
+            "title": "Improvement plan / management",
+            "description": "Establish improvement plans and manage execution."
+        },
+        "revision_return": "Return to planning/model doc after revision",
+        "pre_review_approved_btn": "Pre-review approved → Risk assessment",
+        "input": {
+            "comment_label": "User Comment / Content",
+            "comment_placeholder": "Enter content to collaborate with AI...",
+            "regulation_label": "Regulation / Standard",
+            "regulation_placeholder": "Enter applicable regulations or standards..."
+        }
+    },
+    "lifecycle": {
+        "Draft": "Draft",
+        "PlanningCompleted": "Planning completed",
+        "PreReview": "Pre-review",
+        "RevisionRequired": "Revision required",
+        "PreReviewApproved": "Pre-review approved",
+        "RiskAssessment": "Risk/impact/safety assessment",
+        "RiskPlan": "Risk management plan",
+        "HighRiskReview": "High-risk review",
+        "NormalApproval": "Low/medium risk approval",
+        "RiskPlanApproved": "Risk plan approved",
+        "DevelopmentRequested": "Development requested (ITSM)",
+        "InDevelopment": "In development",
+        "PreOperationTest": "Pre-operation test",
+        "ThirdPartyTest": "Third-party verification",
+        "ValidationChecked": "Validation checked",
+        "OperationApprovalRequested": "Operation approval requested",
+        "DeploymentApproved": "Deployment approved",
+        "Deployed": "Deployed",
+        "Operating": "Operating",
+        "Monitoring": "Monitoring",
+        "ImprovementPlanned": "Improvement planned",
+        "transition": {
+            "planning_completed": "Planning completed",
+            "pre_review_request": "Pre-review request",
+            "revision_required": "Revision required",
+            "revision_done": "Revision done",
+            "pre_review_approved": "Pre-review approved",
+            "risk_assessment": "Risk assessment",
+            "risk_plan": "Risk plan",
+            "high_risk": "High risk",
+            "low_medium_risk": "Low/medium risk",
+            "governance_approved": "Governance approved",
+            "internal_approved": "Internal approval",
+            "dev_requested": "Development requested",
+            "in_development": "In development",
+            "pre_op_test": "Pre-operation test",
+            "third_party": "Third-party verification",
+            "validation_checked": "Validation checked",
+            "third_party_done": "Third-party done",
+            "op_approval_requested": "Operation approval requested",
+            "deployment_approved": "Deployment approved",
+            "deployed": "Deployed",
+            "operating": "Operating",
+            "monitoring": "Monitoring",
+            "improvement_planned": "Improvement planned",
+            "improvement_done": "Improvement done"
+        },
+        "next_actions": "Next possible steps",
+        "state_changed": "State transition requested"
+    },
     "footer": {
         "terms": "Terms of Use",
         "privacy": "Privacy Policy",
         "support": "Support",
-        "copyright": "© 2026 AI Sentinel Corp. All rights reserved."
+        "copyright": "© 2026 GnG International. All rights reserved."
     },
     "cards": {
         "services": "Services",
@@ -626,7 +811,19 @@
         "header": {
             "manager": "Manager",
             "btn_report": "Download Report",
-            "btn_stop": "Emergency Stop"
+            "btn_stop": "Emergency Stop",
+            "btn_upgrade": "Upgrade Service"
+        },
+        "upgrade": {
+            "title": "Request Service Upgrade",
+            "plan_label": "Select Plan",
+            "description": "Select a plan and optionally provide a reason.",
+            "plan_basic": "Basic — Core monitoring and reports",
+            "plan_pro": "Pro — Real-time drift detection and sLLM auto-validation",
+            "plan_enterprise": "Enterprise — Dedicated support and custom compliance mapping",
+            "reason_placeholder": "Reason for upgrade (optional)",
+            "submit": "Submit Upgrade Request",
+            "success": "Upgrade request received. Our team will contact you shortly."
         },
         "status": {
             "operating": "Operating",
@@ -703,5 +900,57 @@
             "btn_block": "Activate Blocking Mode",
             "btn_manual": "Request Manual Intervention"
         }
+    },
+    "energy_intro": {
+        "hero_badge": "Next-Gen Energy AI Solution",
+        "hero_title_1": "AI & Human Collaboration",
+        "hero_title_2": "for Safe Energy Future",
+        "hero_desc": "Experience the power of AI-driven consultation. We help you navigate complex regulations, generate compliance documents, and optimize your energy AI services securely.",
+        "btn_start": "Start Consultation",
+        "btn_demo": "View Demo",
+        "solutions_title": "Integrated Solutions",
+        "solutions_desc": "Connect seamlessly with our suite of AI governance tools tailored for the energy sector.",
+        "features": {
+            "flow_title": "Intelligent Process Flow",
+            "flow_desc": "AI assists in every step of the governance flow, from planning to operation.",
+            "dashboard_title": "Risk Dashboard",
+            "dashboard_desc": "Real-time monitoring of AI risks and compliance status across the organization.",
+            "compliance_title": "Regulatory Compliance",
+            "compliance_desc": "Stay compliant with the latest energy regulations and AI safety guidelines.",
+            "sllm_title": "sLLM Automation",
+            "sllm_desc": "Utilize specialized sLLM for generating reports, checking compliance, and more."
+        },
+        "philosophy_title": "Expertise Meets Innovation",
+        "philosophy_desc": "Our platform isn't just a tool; it's your AI partner. By combining Human Intelligence with specialized sLLM, we ensure your products meet stringent energy regulations while maximizing efficiency.",
+        "philosophy_items": [
+            "Automated Regulatory Checks",
+            "Professional Consulting Reports",
+            "Real-time Risk Mitigation",
+            "Energy-Specific Data Models"
+        ],
+        "human_experts": "Human Experts",
+        "human_experts_desc": "Domain Knowledge & Oversight",
+        "sllm_agent": "sLLM AI Agent",
+        "sllm_agent_desc": "Analysis & Content Generation"
+    },
+    "flow_consult": {
+        "btn_consult": "AI Consult",
+        "btn_consulting": "Consulting...",
+        "report_title": "AI Consultant Report",
+        "report_desc": "Tailored insights based on your inputs and regulations.",
+        "sec_planning": "Strategy & Comment Analysis",
+        "sec_dev": "Compliance & Dev Requirements",
+        "sec_op": "Operational Risk Mgmt",
+        "sec_intro": "AI Summary",
+        "placeholder_title": "AI Partner",
+        "placeholder_desc": "Enter comments for each item and use 'Regulation Search' or 'AI Auto-write'. Click 'AI Consult' for a comprehensive analysis.",
+        "mock_planning": "Analyzing your comment '{comment}', this feature likely falls into High-Risk AI. Measure for data bias prevention are needed from the planning phase.",
+        "mock_dev": "To comply with '{regulation}', XAI modules must be mandatorily included during model development.",
+        "mock_op": "Shorten real-time monitoring cycles during operation and establish immediate rollback procedures for anomalies.",
+        "mock_intro": "Optimized the AI governance framework based on your collaboration.",
+        "btn_auto_write": "AI Auto-write",
+        "btn_search_reg": "Search Regulations",
+        "generating": "Writing...",
+        "searching": "Searching..."
     }
 }
