@@ -18,7 +18,10 @@ import {
   Settings,
   ListOrdered,
   Brain,
-  TrendingUp
+  TrendingUp,
+  Mail,
+  MapPin,
+  Building2
 } from "lucide-react";
 import { ROUTE_PATHS, cn } from "@/lib/index";
 import { motion, AnimatePresence } from "framer-motion";
@@ -67,7 +70,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
 
-          <Link to={ROUTE_PATHS.HOME} className="flex items-center gap-2 group">
+          <a href="https://agent.gngmeta.com/nanogrid/" className="flex items-center gap-2 group">
             <img
               src={`${import.meta.env.BASE_URL}assets/logo_gng_header.png`}
               alt="GnG International"
@@ -77,7 +80,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <span className="font-bold text-lg leading-none tracking-tight">GnG International</span>
               <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-widest">Governance Orchestrator</span>
             </div>
-          </Link>
+          </a>
         </div>
 
         <div className="flex items-center gap-3 lg:gap-6">
@@ -176,14 +179,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 className="fixed top-0 left-0 bottom-0 w-[280px] bg-sidebar z-[60] lg:hidden border-r border-sidebar-border shadow-2xl p-6"
               >
                 <div className="flex items-center justify-between mb-8">
-                  <Link to={ROUTE_PATHS.HOME} className="flex items-center gap-2">
+                  <a href="https://agent.gngmeta.com/nanogrid/" className="flex items-center gap-2">
                     <img
                       src={`${import.meta.env.BASE_URL}assets/logo_gng_header.png`}
                       alt="GnG International"
                       className="h-8 w-auto"
                     />
                     <span className="font-bold">GnG International</span>
-                  </Link>
+                  </a>
                   <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 hover:bg-accent rounded-full">
                     <X size={20} />
                   </button>
@@ -244,23 +247,44 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
           {/* --- Footer --- */}
           <footer className="mt-auto py-8 px-4 lg:px-8 border-t border-border bg-muted/30">
-            <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="flex flex-col gap-1 items-center md:items-start">
-                <p className="text-sm text-muted-foreground font-medium">
-                  © 2026 GnG International Risk Management System. All rights reserved.
-                </p>
-                <p className="text-[11px] text-muted-foreground/60">
-                  이 시스템은 AI 기본법 및 금융 소비자 보호 가이드라인을 준수합니다.
-                </p>
+            <div className="max-w-[1600px] mx-auto space-y-6">
+              {/* Contact / Company Info */}
+              <div className="flex flex-col sm:flex-row flex-wrap items-start justify-between gap-6 pb-6 border-b border-border/50">
+                <div className="flex items-center gap-2 text-foreground font-semibold">
+                  <Building2 className="w-5 h-5 text-primary" />
+                  <span>{t("footer.contact_title")}</span>
+                </div>
+                <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+                  <a href="mailto:info@gngmeta.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+                    <Mail className="w-4 h-4 shrink-0" />
+                    info@gngmeta.com
+                  </a>
+                  <p className="flex items-start gap-2">
+                    <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
+                    <span>경기도 성남시 분당구 판교로289번길 20 2동 5층</span>
+                  </p>
+                  <p className="text-[11px] text-muted-foreground/80">
+                    {t("footer.business_id")}: 625-88-02407
+                  </p>
+                </div>
               </div>
-
-              <div className="flex items-center gap-6">
-                <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">서비스 약관</a>
-                <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">개인정보처리방침</a>
-                <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">시스템 가이드</a>
-                <div className="flex items-center gap-2 px-3 py-1 bg-chart-3/10 text-chart-3 rounded-full border border-chart-3/20">
-                  <div className="w-2 h-2 bg-chart-3 rounded-full animate-pulse"></div>
-                  <span className="text-[10px] font-bold uppercase tracking-tighter">System Healthy</span>
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="flex flex-col gap-1 items-center md:items-start">
+                  <p className="text-sm text-muted-foreground font-medium">
+                    © 2026 GnG International. All rights reserved.
+                  </p>
+                  <p className="text-[11px] text-muted-foreground/60">
+                    {t("footer.compliance_note")}
+                  </p>
+                </div>
+                <div className="flex items-center gap-6">
+                  <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">{t("footer.terms")}</a>
+                  <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">{t("footer.privacy")}</a>
+                  <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">{t("footer.support")}</a>
+                  <div className="flex items-center gap-2 px-3 py-1 bg-chart-3/10 text-chart-3 rounded-full border border-chart-3/20">
+                    <div className="w-2 h-2 bg-chart-3 rounded-full animate-pulse"></div>
+                    <span className="text-[10px] font-bold uppercase tracking-tighter">System Healthy</span>
+                  </div>
                 </div>
               </div>
             </div>

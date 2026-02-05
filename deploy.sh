@@ -9,16 +9,16 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Configuration
-SERVER_HOST="agent.gngmeta.com"
-SERVER_USER="metal" # Default user based on nginx config, override with first argument
+# Configuration - www.gngmeta.com (34.64.248.144)
+SERVER_HOST="34.64.248.144"
+SERVER_USER="metal"
 REMOTE_PATH="/var/www/html/aienergy/"
 
 if [ ! -z "$1" ]; then
     SERVER_USER=$1
 fi
 
-# Using specific PEM key provided by user
+# PEM key (ppk는 PuTTY용, .pem은 OpenSSH용)
 PEM_KEY="/Users/donghokim/Documents/GnG_Tour/GnGTour/energy-orchestrator-platform.pem"
 
 echo "🚀 Deploying to ${SERVER_USER}@${SERVER_HOST}:${REMOTE_PATH} using key ${PEM_KEY}..."

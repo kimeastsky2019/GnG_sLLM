@@ -62,9 +62,15 @@ export default function Home() {
                     {t('hero.cta_demo')} <ArrowRight className="w-5 h-5" />
                   </button>
                 </Link>
-                <button className="px-8 py-4 bg-secondary text-secondary-foreground rounded-xl font-semibold border border-border hover:bg-accent transition-all">
-                  {t('hero.cta_download')}
-                </button>
+
+                <a
+                  href="https://agent.gngmeta.com/nanogrid/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 bg-secondary text-secondary-foreground rounded-xl font-semibold border border-border hover:bg-accent transition-all inline-block"
+                >
+                  {i18n.language === 'ko' ? "플랫폼 소개" : "Platform Intro"}
+                </a>
               </motion.div>
             </motion.div>
           </div>
@@ -285,7 +291,7 @@ export default function Home() {
             </div>
           </div>
         </footer>
-      </div>
-    </Layout>
+      </div >
+    </Layout >
   );
 }

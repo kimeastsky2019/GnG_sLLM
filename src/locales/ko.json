@@ -266,6 +266,9 @@
         "state_changed": "상태 전이 요청됨"
     },
     "footer": {
+        "contact_title": "Contact",
+        "business_id": "사업자등록번호",
+        "compliance_note": "이 시스템은 AI 기본법 및 금융 소비자 보호 가이드라인을 준수합니다.",
         "terms": "이용약관",
         "privacy": "개인정보처리방침",
         "support": "고객지원",

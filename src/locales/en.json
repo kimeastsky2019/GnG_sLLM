@@ -266,6 +266,9 @@
         "state_changed": "State transition requested"
     },
     "footer": {
+        "contact_title": "Contact",
+        "business_id": "Business ID",
+        "compliance_note": "This system complies with the AI Act and financial consumer protection guidelines.",
         "terms": "Terms of Use",
         "privacy": "Privacy Policy",
         "support": "Support",
